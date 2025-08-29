@@ -1,11 +1,11 @@
 Metadata-Version: 2.4
 Name: seimodel
-Version: 1.0.3
+Version: 1.0.4
 Summary: Easy access to the Sei sequence-to-function model
 Description-Content-Type: text/markdown
 License-File: LICENSE-MIT.txt
 License-File: LICENSE.txt
-Requires-Dist: pytorch
+Requires-Dist: torch
 Requires-Dist: numpy
 Requires-Dist: scipy
 Requires-Dist: requests

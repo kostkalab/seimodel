@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seimodel"
-version = "1.0.3"
+version = "1.0.4"
 dependencies = [
-    "pytorch",
+    "torch",
     "numpy",
     "scipy",
     "requests",
