@@ -1,0 +1,7 @@
+# This command explicitly includes the entire directory and all of its contents
+graft dist/seimodel
+
+#- to include the README in the source distribution
+include README_dist.md as README.md
+include LICENSE.TXT
+include LICENSE-MIT.txt

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seimodel"
+version = "1.0.0"
+dependencies = [
+    "pytorch",
+    "numpy",
+    "scipy",
+    "requests",
+    "platformdirs"
+]
+# ... other project metadata
+description = 'Easy access to the Sei sequence-to-function model'
+readme = 'README_dist.md'
+
+[tool.setuptools]
+# The single line that tells setuptools to look at MANIFEST.in
+include-package-data = true
+

@@ -1,0 +1,52 @@
+# seimodel Distribution Package
+
+**Note:** This repository is auto-generated from the `seimodel-dev` repository. It is intended for use only, not for development. All development, issue tracking, and contributions should be directed to the main `seimodel-dev` repository.
+
+## About
+
+This package provides a clean, ready-to-use distribution of the Sei model, split into three sub-models for easier access and usage. It is designed for users who want to utilize the Sei model in their own projects without needing the orginal full Sei development environment.
+
+Some of the key features include:
+
+- Easy to use. Downlowds weights automatically, provides caching (weights don't get re-downloaded)
+
+- Provides access to different parts of the Sei model (trunk, head, projection). For example, it is possible to only use the Sei trunk for a sequence embedding.
+
+- Chromatin track and sequence class information are included as class attributes in the `SeiHead` and `SeiProjection` classes. 
+
+## Usage
+
+
+Install the package directly from the repository:
+```sh
+pip install git+https://github.com/kostkalab/seimodel.git
+```
+
+Example usage in Python:
+```python
+import seimodel as sm
+
+# Load the sub-models
+sei_trunk_model = sm.get_trunk()
+sei_head_model = sm.get_head()
+sei_projection_model = sm.get_projection()
+
+# Load and cache model weights
+sei_trunk_model = sei_trunk_model.load_weights()
+sei_head_model = sei_head_model.load_weights()
+sei_projection_model = sei_projection_model.load_weights()
+
+# Use the models as needed...
+```
+
+For more details on how to make changes, see the documentation in the main `seimodel-dev` repository.
+
+
+## Licensing
+
+This repository contains code and assets under multiple licenses:
+
+- **Original Sei model code and weights** are covered by the license in `LICENSE.txt`. So are the calss defintions files `sei_trunk.py`, `sei_head.py`, and `sei_projection.py`. Other code is not.
+- **Other code in this repository** is covered by the permissive MIT license (`LICENSE-MIT.txt`).
+
+Please refer to each license file for details. If you use or redistribute this package, ensure you comply with the terms of both licenses.
