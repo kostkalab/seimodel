@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seimodel"
-version = "1.0.5"
+version = "1.0.6"
 dependencies = [
     "torch",
     "numpy",
@@ -20,3 +20,5 @@ readme = 'README_dist.md'
 # The single line that tells setuptools to look at MANIFEST.in
 include-package-data = true
 
+[tool.setuptools.packages.find]
+where = ["dist"]
