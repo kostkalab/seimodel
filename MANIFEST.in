@@ -2,6 +2,6 @@
 graft dist/seimodel
 
 #- to include the README in the source distribution
-prune README.md
+exclude README.md
 include LICENSE.TXT
 include LICENSE-MIT.txt

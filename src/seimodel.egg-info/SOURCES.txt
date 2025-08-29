@@ -1,7 +1,6 @@
 LICENSE-MIT.txt
 LICENSE.txt
 MANIFEST.in
-README.md
 README_dist.md
 pyproject.toml
 dist/seimodel/dat/config.yaml

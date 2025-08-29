@@ -1,17 +1,3 @@
-Metadata-Version: 2.4
-Name: seimodel
-Version: 1.0.3
-Summary: Easy access to the Sei sequence-to-function model
-Description-Content-Type: text/markdown
-License-File: LICENSE-MIT.txt
-License-File: LICENSE.txt
-Requires-Dist: pytorch
-Requires-Dist: numpy
-Requires-Dist: scipy
-Requires-Dist: requests
-Requires-Dist: platformdirs
-Dynamic: license-file
-
 # seimodel Distribution Package
 
 **Note:** This repository is auto-generated from the `seimodel-dev` repository. It is intended for use only, not for development. All development, issue tracking, and contributions should be directed to the main `seimodel-dev` repository.
