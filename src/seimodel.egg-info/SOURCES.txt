@@ -3,6 +3,7 @@ LICENSE.txt
 MANIFEST.in
 README_dist.md
 pyproject.toml
+dist/seimodel/__init__.py
 dist/seimodel/dat/config.yaml
 dist/seimodel/dat/seqclass.names
 dist/seimodel/dat/target.names
