@@ -5,3 +5,4 @@ graft dist/seimodel
 exclude README.md
 include LICENSE.TXT
 include LICENSE-MIT.txt
+prune src
