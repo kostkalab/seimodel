@@ -1,4 +1,4 @@
-from tml_mixin.mixin import TorchModelLoaderMixin
+from .tml_mixin.mixin import TorchModelLoaderMixin
 from sei_trunk import SeiTrunk
 from sei_head import SeiHead
 from sei_projection import SeiProjection
