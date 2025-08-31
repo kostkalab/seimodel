@@ -9,7 +9,7 @@ from importlib.abc import Traversable
 import re
 
 # - get the chromatin profile annotations
-TARGET_ANNOT_FILE = resources.files(__package__).joinpath("dat", "target.names")
+TARGET_ANNOT_FILE = resources.files("seimodel.dat").joinpath("target.names")
 
 def read_target_annot(filepath: Traversable) -> dict[str, list[str]]:
     target_annot = {"context": [], "assay": [], "info": []}

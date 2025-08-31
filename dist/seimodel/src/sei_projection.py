@@ -5,7 +5,7 @@ import torch.nn as nn
 
 from importlib import resources
 
-CLASS_ANNOT_FILE = resources.files(__package__).joinpath("dat", "seqclass.names")
+CLASS_ANNOT_FILE = resources.files("seimodel.dat").joinpath("seqclass.names")
 
 def read_class_annot(filepath: resources.abc.Traversable) -> list[str]:
     with open(filepath, "r") as f:
