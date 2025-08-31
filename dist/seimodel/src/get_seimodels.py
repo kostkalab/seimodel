@@ -6,7 +6,7 @@ import yaml
 import torch
 from importlib import resources
 
-CONFIG_FILE = resources.files("simodel.dat").joinpath("config.yaml")
+CONFIG_FILE = resources.files("seimodel.dat").joinpath("config.yaml")
 
 
 # - read in configuration
