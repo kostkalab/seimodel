@@ -4,12 +4,13 @@ Sei architecture: Head
 
 import torch.nn as nn
 from scipy.interpolate import splev
+
 from importlib import resources
 from importlib.abc import Traversable
 import re
 
 # - get the chromatin profile annotations
-TARGET_ANNOT_FILE = resources.files("seimodel.dat").joinpath("target.names")
+TARGET_ANNOT_FILE = resources.files(__package__.replace('.src', '.dat')).joinpath("target.names")
 
 def read_target_annot(filepath: Traversable) -> dict[str, list[str]]:
     target_annot = {"context": [], "assay": [], "info": []}
