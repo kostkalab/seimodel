@@ -16,7 +16,7 @@ with open(CONFIG_FILE, "r") as f:
 BASE_URL = config["base_url"]
 APP_NAME = config["app_name"]
 FILE_NAME = config["filename_trunk"]
-VERSION = config["version"]
+VERSION = str(config["version"])
 
 
 def make_loadable(mixin, base):
