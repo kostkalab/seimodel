@@ -6,6 +6,12 @@
 
 This package provides a clean, ready-to-use distribution of the Sei model, split into three sub-models for easier access and usage. It is designed for users who want to utilize the Sei model in their own projects without needing the orginal full Sei development environment.
 
+The (original) Sei model is available via this GitHub repository: [https://github.com/FunctionLab/sei-framework](https://github.com/FunctionLab/sei-framework), and data is available from this Zenodo link: [https://doi.org/10.5281/zenodo.4906961](https://doi.org/10.5281/zenodo.4906961).
+
+This version of the (same) model provides access to each of the individual (sequential) steps the Sei model goes through: trunk (i.e., input -> sequence representation), head (i.e., sequence representation -> chromatin profile), and projection (i.e., chromatin profile -> sequence class). For more details see the Sei model plublication (also about the network topology in the supplement): [https://www.nature.com/articles/s41588-022-01102-2](https://www.nature.com/articles/s41588-022-01102-2). 
+
+The model weights this version uses are identical to the ones originally provided, but accessible throught the following Zenodo link: [https://zenodo.org/records/16950342](https://zenodo.org/records/16950342).
+
 Some of the key features include:
 
 - Easy to use. Downlowds weights automatically, provides caching (weights don't get re-downloaded)
@@ -26,12 +32,23 @@ Example usage in Python:
 ```python
 import seimodel as sm
 
-# Load the sub-models
+# Load the sub-models; this will load the architecture but not the weights
+#--------------------------------------------------------------------------
+
+#- trunk model for sequence representation
+#- (B, 4, 4_096) -> (B ,15_360)
 sei_trunk_model = sm.get_trunk()
+
+#- head model for chromatin profiles
+#- (B, 15_360) -> (B, 21_907)
 sei_head_model = sm.get_head()
+
+#- projection model for sequence classes
+#- (B, 21_907) -> (B, 61)
 sei_projection_model = sm.get_projection()
 
 # Load and cache model weights
+#-----------------------------
 sei_trunk_model = sei_trunk_model.load_weights()
 sei_head_model = sei_head_model.load_weights()
 sei_projection_model = sei_projection_model.load_weights()
