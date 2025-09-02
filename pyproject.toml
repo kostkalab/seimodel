@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seimodel"
-version = "1.0.17"
+version = "1.0.18"
 dependencies = [
     "torch",
     "numpy",
     "scipy",
     "requests",
-    "platformdirs"
+    "platformdirs",
+    "tqdm"
 ]
 # ... other project metadata
 description = 'Easy access to the Sei sequence-to-function model'
