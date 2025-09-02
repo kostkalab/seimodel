@@ -1,4 +1,4 @@
-version: 1.0.16
+version: 1.0
 base_url: "https://zenodo.org/records/16950342/files/"
 app_name: "seimodel"
 filename_trunk: "sei_trunk.pth"
