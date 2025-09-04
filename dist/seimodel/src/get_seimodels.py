@@ -15,7 +15,6 @@ with open(CONFIG_FILE, "r") as f:
 
 BASE_URL = config["base_url"]
 APP_NAME = config["app_name"]
-FILE_NAME = config["filename_trunk"]
 VERSION = str(config["version"])
 
 
@@ -31,17 +30,20 @@ SeiTrunkLoadable = make_loadable(TorchModelLoaderMixin, SeiTrunk)
 SeiHeadLoadable = make_loadable(TorchModelLoaderMixin, SeiHead)
 SeiProjectionLoadable = make_loadable(TorchModelLoaderMixin, SeiProjection)
 
-MODEL_CLASSES = {
-    "trunk": SeiTrunkLoadable,
-    "head": SeiHeadLoadable,
-    "projection": SeiProjectionLoadable,
+MODEL_PARAMS = {
+    "trunk": {'class': SeiTrunkLoadable,
+              'filename': config["filename_trunk"]},
+    "head": {'class': SeiHeadLoadable,
+             'filename': config["filename_head"]},
+    "projection": {'class': SeiProjectionLoadable,
+                   'filename': config["filename_projection"]},
 }
 
 
 def get_sei_model(model_name: str, load_weights: bool = False) -> torch.nn.Module:
-    model_cls = MODEL_CLASSES[model_name]
+    model_cls = MODEL_PARAMS[model_name]['class']
     model = model_cls(
-        base_url=BASE_URL, filename=FILE_NAME, app_name=APP_NAME, version=VERSION
+        base_url=BASE_URL, filename=MODEL_PARAMS[model_name]['filename'], app_name=APP_NAME, version=VERSION
     )
     if load_weights:
         model = model.load_weights()
