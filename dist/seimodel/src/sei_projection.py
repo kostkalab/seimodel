@@ -52,13 +52,13 @@ class SeiProjection(nn.Module):
         """Forward propagation of a batch.
         """
         if self.mode == "sequence":
-            out = self.projector(x)
+            out = self.projector(x) / self.projector.weight.norm(dim=1)
             return out
         elif self.mode == "variant":
             ref, alt = x
             ref_adj, alt_adj = sc_hnorm_varianteffect(ref, alt, SeiProjection.histone_indices, ref.device)
-            ref_out = self.projector(ref_adj)
-            alt_out = self.projector(alt_adj)
+            ref_out = self.projector(ref_adj) / self.projector.weight.norm(dim=1)
+            alt_out = self.projector(alt_adj) / self.projector.weight.norm(dim=1)
             return (ref_out, alt_out)
         else:
             print(f"Not sequence or variant, instead: {self.mode}")
