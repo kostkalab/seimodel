@@ -60,7 +60,7 @@ sei_projection_model = sei_projection_model.load_weights()
 
 The core `seimodel` package does not require the full variant-check stack.
 
-If you run the utility script `dist/seimodel/src/check_variant_scores.py`, you will also need:
+If you run the utility script `./src/check_variant_scores.py`, you will also need:
 
 - `pandas`
 - `h5py`
