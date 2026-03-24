@@ -37,15 +37,15 @@ import seimodel as sm
 
 #- trunk model for sequence representation
 #- (B, 4, 4_096) -> (B ,15_360)
-sei_trunk_model = sm.get_trunk()
+sei_trunk_model = sm.get_sei_trunk()
 
 #- head model for chromatin profiles
 #- (B, 15_360) -> (B, 21_907)
-sei_head_model = sm.get_head()
+sei_head_model = sm.get_sei_head()
 
 #- projection model for sequence classes
 #- (B, 21_907) -> (B, 61)
-sei_projection_model = sm.get_projection()
+sei_projection_model = sm.get_sei_projection()
 
 # Load and cache model weights
 #-----------------------------
@@ -55,6 +55,18 @@ sei_projection_model = sei_projection_model.load_weights()
 
 # Use the models as needed...
 ```
+
+## Optional Dependencies
+
+The core `seimodel` package does not require the full variant-check stack.
+
+If you run the utility script `dist/seimodel/src/check_variant_scores.py`, you will also need:
+
+- `pandas`
+- `h5py`
+- `grelu`
+
+These are intentionally optional and are not required for loading and running the trunk/head/projection models.
 
 For more details on how to make changes, see the documentation in the main `seimodel-dev` repository.
 

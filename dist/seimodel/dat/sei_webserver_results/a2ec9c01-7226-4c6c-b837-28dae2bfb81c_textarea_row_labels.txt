@@ -1,0 +1,8 @@
+chrom	pos	name	ref	alt	strand	ref_match	contains_unk
+chr1	1425822	test	C	G	+	True	False
+chr1	1615869	test	C	T	+	True	False
+chr1	1659060	test	G	A	+	True	False
+chr1	1659114	test	A	G	+	True	False
+chr1	2050958	test	T	C	+	True	False
+chr1	2074688	test	G	A	+	True	False
+chr1	3437073	test	G	A	+	True	False
