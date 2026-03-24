@@ -6,7 +6,6 @@ import torch
 import tqdm
 import grelu.io.genome
 import numpy as np
-import h5py
 from importlib import resources
 from pathlib import Path
 

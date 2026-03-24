@@ -63,7 +63,6 @@ The core `seimodel` package does not require the full variant-check stack.
 If you run the utility script `./dist/seimodel/src/check_variant_scores.py`, you will also need:
 
 - `pandas`
-- `h5py`
 - `grelu`
 
 These are intentionally optional and are not required for loading and running the trunk/head/projection models.
